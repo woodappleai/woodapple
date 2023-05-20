@@ -40,7 +40,11 @@ import {AuthGuardService} from './auth-guard.service';
       providers: [
         {
           id: GoogleLoginProvider.PROVIDER_ID,
-          provider: new GoogleLoginProvider('148517665605-jspahbqleats6lvlag9kasc2c11b5g7o.apps.googleusercontent.com')
+          provider: new GoogleLoginProvider(
+            '673882695883-l4vc6a7ju05cp1hstgr41u2jspa4kb9l.apps.googleusercontent.com', {
+              scope: 'email',
+              plugin_name: 'login-app'
+            }),
         }
       ]
     }
@@ -48,5 +52,6 @@ import {AuthGuardService} from './auth-guard.service';
     AuthGuardService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
 }
